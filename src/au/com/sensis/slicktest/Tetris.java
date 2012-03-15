@@ -7,10 +7,10 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 
 public class Tetris extends BasicGame {
-    
+
     private Model model;
     private Renderer renderer;
-    
+
     public Tetris() {
         super("Tetris");
     }
@@ -21,7 +21,7 @@ public class Tetris extends BasicGame {
         renderer = new Renderer();
         container.setShowFPS(false);
     }
-    
+
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
         model.update(delta, container.getInput());
@@ -31,7 +31,7 @@ public class Tetris extends BasicGame {
     public void render(GameContainer container, Graphics g) throws SlickException {
         renderer.render(model, container, g);
     }
-    
+
     public static void main(String[] args) throws SlickException {
         AppGameContainer app = new AppGameContainer(new Tetris());
         app.start();
