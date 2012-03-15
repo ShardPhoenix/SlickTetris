@@ -6,6 +6,13 @@ public class SPiece extends Piece {
     
     private static final Color COLOR = new Color(237, 229, 2);
     
+    private static final Rotation[] ROTATIONS;
+    
+    @Override
+	protected Rotation[] getRotations() {
+		return ROTATIONS;
+	}
+    
     static {
         ROTATIONS = new Rotation[2];
         //Inner arrays are the columns (vertical) - read as rotated by 90 degrees clockwise

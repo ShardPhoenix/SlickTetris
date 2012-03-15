@@ -6,6 +6,13 @@ public class LinePiece extends Piece {
     
     private static final Color COLOR = new Color(145, 10, 255);
     
+    private static final Rotation[] ROTATIONS;
+    
+    @Override
+	protected Rotation[] getRotations() {
+		return ROTATIONS;
+	}
+    
     static {
         ROTATIONS = new Rotation[2];
         //Inner arrays are the columns (vertical) - read as rotated by 90 degrees clockwise

@@ -4,8 +4,6 @@ public abstract class Piece {
     
     public static final int LAYOUT_SIZE = 4;
     
-    protected static Rotation[] ROTATIONS = null; //specify in child class
-    
     protected Block[][] layout;
     protected Coord coord;
 
@@ -19,10 +17,12 @@ public abstract class Piece {
         this.layout = new Block[LAYOUT_SIZE][LAYOUT_SIZE];
     }
     
+    protected abstract Rotation[] getRotations();
+    
     //TODO: push away from right edge if rotating near it
     public void tryRotate(Block[][] tank) {
-        int nextRotation = this.currentRotation < ROTATIONS.length - 1 ? this.currentRotation + 1 : 0;
-        Block[][] nextLayout = ROTATIONS[nextRotation].getLayout();
+        int nextRotation = currentRotation < getRotations().length - 1 ? currentRotation + 1 : 0;
+        Block[][] nextLayout = getRotations()[nextRotation].getLayout();
         
         for (int x = 0; x < nextLayout.length; x++) {
             for (int y = 0; y < nextLayout[0].length; y++) {
@@ -38,9 +38,9 @@ public abstract class Piece {
         }
         
         this.currentRotation = nextRotation;
-        this.layout = ROTATIONS[currentRotation].getLayout();
-        this.height = ROTATIONS[currentRotation].getHeight();
-        this.width = ROTATIONS[currentRotation].getWidth();
+        this.layout = getRotations()[currentRotation].getLayout();
+        this.height = getRotations()[currentRotation].getHeight();
+        this.width = getRotations()[currentRotation].getWidth();
     }
 
     public Coord getCoord() {

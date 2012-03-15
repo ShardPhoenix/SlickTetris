@@ -129,6 +129,8 @@ public class Model {
     private void generateNextPiece() {
         int pieceType = random.nextInt(NUMBER_OF_PIECE_TYPES);
         
+        // generating numbers ok but not piece?!?!?
+        
         Coord startLocation = new Coord(TANK_WIDTH/2, 0);
         switch (pieceType) {
         case 0:

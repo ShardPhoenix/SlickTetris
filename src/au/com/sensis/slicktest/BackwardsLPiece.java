@@ -6,6 +6,13 @@ public class BackwardsLPiece extends Piece {
     
     private static final Color COLOR = new Color(255, 170, 23);
     
+    private static final Rotation[] ROTATIONS;
+    
+    @Override
+	protected Rotation[] getRotations() {
+		return ROTATIONS;
+	}
+    
     static {
         ROTATIONS = new Rotation[4];
         //Inner arrays are the columns (vertical) - read as rotated by 90 degrees clockwise

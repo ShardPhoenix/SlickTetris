@@ -5,6 +5,11 @@ import org.newdawn.slick.Color;
 public class SquarePiece extends Piece {
     
     private static final Color COLOR = new Color(97, 5, 255);
+    
+    @Override
+	protected Rotation[] getRotations() {
+		return null;
+	}
 
     public SquarePiece(Coord coord) {
         super(coord);

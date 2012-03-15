@@ -37,5 +37,4 @@ public class Tetris extends BasicGame {
         app.start();
     }
 
-
 }
